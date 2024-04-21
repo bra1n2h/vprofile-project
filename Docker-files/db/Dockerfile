@@ -1,0 +1,10 @@
+FROM mysql:8.0.33
+LABEL "Project"="Vprofile"
+LABEL "Author"="Nikita"
+
+ENV MYSQL_ROOT_PASSWORD="vprodbapp"
+ENV MYSQL_DATABASE="accounts"
+
+ADD db_backup.sql docker-entrypoint-init.d/db_backup.sql
+
+EXPOSE 3306
